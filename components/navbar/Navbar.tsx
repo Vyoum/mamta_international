@@ -35,7 +35,7 @@ export default function Navbar() {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Top Bar */}
-      <div className={`top-bar ${isActive ? "top-bar-active" : ""}`}>
+      <div className="top-bar">
         <span>Fireflies Woman&apos;s Collection</span>
         <span className="divider">|</span>
         <Link href="/shop">Shop Now</Link>
