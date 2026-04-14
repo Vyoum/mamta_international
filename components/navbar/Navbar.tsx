@@ -7,7 +7,6 @@ const navLinks = [
   { href: "/new-arrivals", label: "NEW ARRIVALS" },
   { href: "/rockstud", label: "ROCKSTUD" },
   { href: "/women", label: "WOMEN" },
-  { href: "/men", label: "MEN" },
   { href: "/bags", label: "BAGS" },
   { href: "/gifts", label: "GIFTS" },
   { href: "/m-universe", label: "M-UNIVERSE" },
