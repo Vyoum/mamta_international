@@ -50,9 +50,9 @@ export default function Navbar() {
 
         <div className="nav-center sans-font">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="group relative">
+            <Link key={link.href} href={link.href} className="group relative inline-block">
               {link.label}
-              <span className="absolute bottom-0 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100" />
+              <span className="absolute -bottom-px left-0 h-[1px] w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </Link>
           ))}
         </div>
