@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
@@ -13,10 +14,28 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const isActive = isScrolled || isHovered;
+
   return (
-    <>
+    <div
+      className={`navbar-wrapper ${isActive ? "navbar-active" : ""}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* Top Bar */}
-      <div className="top-bar">
+      <div className={`top-bar ${isActive ? "top-bar-active" : ""}`}>
         <span>Fireflies Woman&apos;s Collection</span>
         <span className="divider">|</span>
         <Link href="/shop">Shop Now</Link>
@@ -107,6 +126,6 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
-    </>
+    </div>
   );
 }
